@@ -1,0 +1,69 @@
+"Name" = 'ProjectPLD'
+"Author" = 'Tamem Abdrabou'
+"Version" = '1.0'
+"About" = 'Grammar for a simple programming language with Expressions, if statement, and for loop'
+
+"Start Symbol" = <program>        
+!-------- Terminals --------!
+Id     = [_]|{letter}{Alphanumeric}*
+Digit  = ('+'|'-')?{digit}+ ('.' {digit}+)? ('e' ('+'|'-'){digit}+ '^' ('+'|'-'){digit}+ ('.' {digit}+)?)?
+!NewLine = '\n'
+
+!-------- Rules --------!
+<program> ::= 'Start' <stmt_list> 'End'
+
+<stmt_list> ::= <concept>
+              | <concept> <stmt_list>
+
+<concept> ::= <assign>
+            | <if_stmt>
+            | <for_stmt>
+            | <switch_stmt>
+
+<id> ::= Id
+<digit> ::= Digit
+!<NewLine> ::= NewLine
+
+<assign> ::= <id> '=' <expr>
+
+<expr> ::= <expr> '+' <term>
+         | <expr> '-' <term>
+         | <term>
+
+<term> ::= <term> '*' <factor>
+         | <term> '/' <factor>
+         | <term> '%' <factor>
+         | <factor>
+
+<factor> ::= <factor> '**' <primary>
+           | <primary>
+
+<primary> ::= '(' <expr> ')'
+            | <id>
+            | <digit>
+
+!-------- if_stmt --------!
+<if_stmt> ::= 'if' '(' <cond> ')' ':' '=>' <stmt_list> '<=' <e_cond>
+<e_cond> ::= 'ef' '(' <cond> ')' ':' '=>' <stmt_list> '<=' <e_cond>
+                    | 'else' ':' '=>' <stmt_list> '<='
+                    |
+                    
+<cond> ::= <expr> <op> <expr>
+
+<op> ::= '<' | '>' | '==' | '!=' | '<=' | '>='
+
+!-------- for_stmt --------!
+<for_stmt> ::= 'for' <id> 'in' <range_expr> ':' '=>' <stmt_list> '<='
+
+<range_expr> ::= 'range' '(' <expr> ')'
+               | 'range' '(' <expr> ',' <expr> ')'
+               
+!-------- switch_stmt --------!
+<switch_stmt> ::= 'switch' '(' <expr> ')' ':' '=>' <case_list> '<='
+
+<case_list> ::= <case> <case_list> 
+              | <default_case>
+              
+
+<case> ::= 'case' '(' <id> ')' ':' <stmt_list>
+<default_case> ::= 'default' ':' <stmt_list>

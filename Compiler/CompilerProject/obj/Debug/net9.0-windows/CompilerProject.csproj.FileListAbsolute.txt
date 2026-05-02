@@ -1,0 +1,17 @@
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\bin\Debug\net9.0-windows\CompilerProject.exe
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\bin\Debug\net9.0-windows\CompilerProject.deps.json
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\bin\Debug\net9.0-windows\CompilerProject.runtimeconfig.json
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\bin\Debug\net9.0-windows\CompilerProject.dll
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\bin\Debug\net9.0-windows\CompilerProject.pdb
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.GeneratedMSBuildEditorConfig.editorconfig
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.AssemblyInfoInputs.cache
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.AssemblyInfo.cs
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.csproj.CoreCompileInputs.cache
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.sourcelink.json
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.dll
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\refint\CompilerProject.dll
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.pdb
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.genruntimeconfig.cache
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\ref\CompilerProject.dll
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.Form1.resources
+E:\Visuale Studio\PLDProject\Compiler\CompilerProject\obj\Debug\net9.0-windows\CompilerProject.csproj.GenerateResource.cache

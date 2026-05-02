@@ -1,0 +1,71 @@
+"Name" = 'ProjectPLD'
+"Author" = 'Tamem Abdrabou'
+"Version" = '1.1'
+"About" = 'Refactored Grammar (No Left Recursion)'
+
+"Start Symbol" = <program>        
+
+!-------- Terminals --------!
+Id     = [_]|{letter}{Alphanumeric}*
+Digit  = ('+'|'-')?{digit}+ ('.' {digit}+)? ('e' ('+'|'-'){digit}+)?
+
+!-------- Rules --------!
+<program> ::= 'Start' <stmt_list> 'End'
+
+<stmt_list> ::= <concept> <stmt_list>
+              | <concept>
+
+<concept> ::= <assign>
+            | <if_stmt>
+            | <for_stmt>
+            | <switch_stmt>
+
+<id> ::= Id
+<digit> ::= Digit
+
+<assign> ::= <id> '=' <expr>
+
+<expr> ::= <term> <expr_prime>
+<expr_prime> ::= '+' <term> <expr_prime>
+               | '-' <term> <expr_prime>
+               | 
+
+<term> ::= <factor> <term_prime>
+<term_prime> ::= '*' <factor> <term_prime>
+               | '/' <factor> <term_prime>
+               | '%' <factor> <term_prime>
+               | 
+
+<factor> ::= <primary> <factor_prime>
+<factor_prime> ::= '**' <primary> <factor_prime>
+                 | 
+
+<primary> ::= '(' <expr> ')'
+            | <id>
+            | <digit>
+
+!-------- if_stmt --------!
+<if_stmt> ::= 'if' '(' <cond> ')' ':' '<~' <stmt_list> '~>' <e_cond>
+<e_cond> ::= 'ef' '(' <cond> ')' ':' '<~' <stmt_list> '~>' <e_cond>
+           | 'else' ':' '<~' <stmt_list> '~>'
+           | 
+
+<cond> ::= <expr> <op> <expr>
+<op> ::= '<' | '>' | '==' | '!=' | '<=' | '>='
+
+!-------- for_stmt --------!
+<for_stmt> ::= 'for' <id> 'in' <range_expr> ':' '<~' <stmt_list> '~>'
+
+<range_expr> ::= 'range' '(' <expr> ')'
+               | 'range' '(' <expr> ',' <expr> ')'
+               
+!-------- switch_stmt --------!
+<switch_stmt> ::= 'switch' '(' <expr> ')' ':' '<~' <case_list> '~>'
+
+<case_list> ::= <case> <case_list> 
+              | <case>
+              | <default_case>
+
+<case> ::= 'case' '(' <id> ')' ':' <stmt_list>
+        | 'case' '(' <digit> ')' ':' <stmt_list>
+<default_case> ::= 'default' ':' <stmt_list>
